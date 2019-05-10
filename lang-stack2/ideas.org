@@ -5,3 +5,18 @@ stackable language
 - Data source layer
 - RPC layer
 - Service layer
+
+
+
+Language layer (python.rkt)
+-> read python generation statements
+<- output python
+
+Config layer (config.rkt)
+-> read config.rkt
+<- output python generation statements
+
+
+Service layer (flask.rkt)
+-> read service.rkt
+<- output python generation statements
