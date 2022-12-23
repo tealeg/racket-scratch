@@ -1,56 +1,17 @@
-#lang racket
+#lang racket/base 
 
-(require racket/draw)
+(require racket/class)
 
 ;; Wood types
 ;; Konstruktionsholz NSI Fichte/Tanne 40x60x2500@4.72
 ;; Brettschichtholz SI Fichte/Tanne 60x120x3000@22.47
 
-(struct block (length width height x y z colour))
+(require "block.rkt")
+(require "render.rkt")
+(require "wood.rkt")
 
-(define (rotate-90-degrees source)
-  (struct-copy block source
-               [length (block-width source)]
-               [width (block-length source)]))
 
-(define (render-block dc x y width height colour)
-    ;; (display (~a (list x y width height)))
-    ;; (newline)
-    (send dc set-brush colour 'solid)
-    (send dc draw-rectangle x y width height))
-  
 
-(define (render-top-down width height blocks filename)
-  (define target (make-bitmap width height))
-  (define dc (new bitmap-dc% [bitmap target]))
-
-  (for ([obj blocks])
-    (render-block dc 
-     (block-x obj)
-     (block-y obj)
-     (block-width obj)
-     (block-length obj)
-     (block-colour obj)))
-
-  (send target save-file filename 'png))
-
-(define (render-from-left-side width height blocks filename)
-  (define target (make-bitmap width height))
-  (define dc (new bitmap-dc% [bitmap target]))
-
-  (for ([obj blocks])
-    (render-block
-     dc
-     (block-y obj)
-     (- height (+ (block-z obj) (block-height obj)))
-     (block-length obj)
-     (block-height obj)
-     (block-colour obj)))
-
-  (send target save-file filename 'png))
-
-(define (register-wood b)
-  (display (sort (list (block-width b) (block-height b) (block-length b)) <)))
 
 (define bedroom (block 2000 3050 2300 0 0 0 "gray"))
 (define nordli-1200 (block 470 1200 540 0 0 0 "white"))
