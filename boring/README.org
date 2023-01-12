@@ -1,0 +1,48 @@
+* Boring Racket
+
+An attempt to do, small, boring programs in Racket.
+
+** Why?
+The [[https://racket-lang.org/][Racket programming language]] has strong relationship to academia
+and academic computer science.  In particular, Racket developed from
+the PLT Scheme implementation - diverging from the "mainstream" of
+Scheme implementations with a deliberate focus on making a language
+sutiable for "Language Oriented" programming (most obviously through
+it's "#lang" syntax).
+
+All of this is very nice, and very valuable, but it sometimes makes it
+hard to see that Racket is a practicle, elegant, mature language with
+a good set of libraries.  Racket is a language that one can do real
+world work in.  I'm hoping that this repository might go some small
+way to address that, though I don't wish to oversell it - this will be
+a sporadic hobby at best.
+
+The 2nd function of this repository is to give me 'something to do' in
+Racket.  I am a highly experienced software engineer - in 2023 I'll
+have been programming for 40 years (I started on a Sinclair ZX
+Spectrum 48k, when I was 6).  I've been building software for a living
+for 25 year - but that now means that I don't spend all day every day
+staring at code.  I do have to remain active as a programmer to be
+good at what I do - but my working life doesn't afford me much
+opportunity to work in Racket.  That's a shame, because I find Scheme
+in general, and especially Racket, to be an elegant and joyful
+experience.
+
+Coming ocassionally back to a language in my spare time is hard, and
+actually the hardest part is finding things to do, which aren't too
+epic in scope, too work related or simply too mentally challenging for
+the limited energy I have left after my work and family life.  Thus,
+these "boring programs" - solved problems, that don't need resolving,
+but which do practical things, are intended to be like a regular 5k
+jog.  Just enough to keep me fit, without hurting too much ;-)
+
+** What?
+Well, we'll see.  I'll start out with very simple version of classic
+UNIX command line tools.  Nothing ambitious.
+
+| *Program* | *Status*          | *Notes*                      |
+|---------+-----------------+----------------------------|
+| =ls=      | initial version | No formatting, no testing. |
+|         |                 |                            |
+
+
