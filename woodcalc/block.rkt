@@ -1,6 +1,6 @@
 #lang racket/base
 
-(struct block (length width height x y z colour))
+(struct block (length width height x y z colour radians))
 (provide (struct-out block))
 
 (define (rotate-90-degrees source)
